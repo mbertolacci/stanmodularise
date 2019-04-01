@@ -38,7 +38,7 @@ How to create a package using this:
     PKG_CPPFLAGS = -I"../inst/include" -I"$(STANHEADERS_SRC)" -I"$(BOOST_NOT_IN_BH_SRC)" -DBOOST_RESULT_OF_USE_TR1 -DBOOST_NO_DECLTYPE -DBOOST_DISABLE_ASSERTS -DEIGEN_NO_DEBUG -DBOOST_NO_CXX11_RVALUE_REFERENCES
     ```
       to `src/Makevars.win`.
-1. Create a `stan_files` directory in `src` and add your stan files
+1. Create a `stan_files` directory in `src` and add your `.stan` files
 1. Run `modularise_stan_files` from this package
 1. Run `devtools::load_all` or `pkgbuild::compile_dll`
 1. Run `devtools::document` to build the package

@@ -8,7 +8,14 @@ How to create a package using this:
 
 1. Create the package with [`usethis::create_package`](https://github.com/r-lib/usethis)
 1. Add [Rcpp](https://github.com/RcppCore/Rcpp) to the package (e.g., via `usethis::use_rcpp`)
+    - Ensure the requisite `roxygen` comment exist in an `R` file (remember to change `yourpackagename`):
+        ```
+        #' @import Rcpp
+        #' @useDynLib yourpackagename, .registration = TRUE
+        NULL
+        ```
 1. Add `StanHeaders` , `rstan` , `BH` , `Rcpp` to the `LinkingTo` section of `DESCRIPTION`
+    - Note that `usethis::use_package` defaults to adding packages to the `Imports` section of the `DESCRIPTION` file, not the `LinkingTo`
 1. Add
     ```
     STANHEADERS_SRC = \

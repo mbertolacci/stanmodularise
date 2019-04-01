@@ -33,6 +33,7 @@ How to create a package using this:
       to `src/Makevars.win`.
 1. Create a `stan_files` directory in `src` and add your stan files
 1. Run `modularise_stan_files` from this package
+1. Run `devtools::load_all` or `pkgbuild::compile_dll`
 1. Run `devtools::document` to build the package
 
 If all goes well, just as with `rstantools`, you should have a `.stan_models` variable available in your package.
